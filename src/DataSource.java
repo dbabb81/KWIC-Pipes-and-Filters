@@ -26,12 +26,20 @@ public class DataSource
         */
         try
         {
-            in = new BufferedReader(new FileReader("/Users/david/Desktop/test.txt"));
+            in = new BufferedReader(new FileReader("/Users/drewjohnson/desktop/hey.txt"));
             dataInput = new LinkedList<>();
         
             while((hold = in.readLine()) != null)
             {
-                dataInput.add(hold);
+                if(hold.length() > 0)
+                {
+                    dataInput.add(hold);
+                }
+                
+                else
+                {
+                    dataInput.add(" ");
+                }
             }
             
             push(pipe);

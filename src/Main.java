@@ -23,7 +23,7 @@ public class Main
         pipe = new Pipe();
         source = new DataSource(pipe);
         rFilter = new RotateFilter(pipe);
-        sink = new DataSink(pipe);
+        //sink = new DataSink(pipe);
         aFilter = new AlphabetizeFilter(pipe);
         sink = new DataSink(pipe);
         tEnd = System.nanoTime();

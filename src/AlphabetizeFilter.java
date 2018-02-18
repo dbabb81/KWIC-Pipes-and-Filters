@@ -31,16 +31,21 @@ public class AlphabetizeFilter
             the predefined assigned values of the first
             character in the string.
         */
-        //Collections.sort(newData, Collator.getInstance(Locale.US));
+        Collections.sort(newData, Collator.getInstance(Locale.US));
         Collections.sort(newData, (String o1, String o2) -> {
-            if (getValue(o1.charAt(0)) > getValue(o2.charAt(0))) 
+            
+            if(getValue(o1.charAt(0)) != ' ')
             {
-                return 1;
+                if (getValue(o1.charAt(0)) > getValue(o2.charAt(0))) 
+                {
+                    return 1;
+                }
+                if (getValue(o1.charAt(0)) < getValue(o2.charAt(0)))            
+                {
+                    return -1;
+                }
             }
-            if (getValue(o1.charAt(0)) < getValue(o2.charAt(0)))            
-            {
-                return -1;
-            }
+           
             return 0;
         });        
         push(pipe);
